@@ -1,0 +1,24 @@
+ul.nav-bar {
+  display: flex;
+}
+
+li.nav-item {
+  list-style: none;
+  margin-right: 12px;
+  color: #222;
+}
+
+a.nav-link {
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 4px 12px;
+  text-decoration: none;
+  color: #222;
+  background-color: white;
+  outline: none;
+}
+
+a.active-link {
+  background-color: #222;
+  color: white;
+}
