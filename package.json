@@ -1,6 +1,6 @@
 {
   "name": "react-goodbye",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A save reminder component for react router",
   "author": "xJkit",
   "license": "MIT",
@@ -19,7 +19,8 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": ">=16.3.0"
+    "react": ">=16.3.0",
+    "react-router": ">4"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
