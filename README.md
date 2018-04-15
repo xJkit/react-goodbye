@@ -35,6 +35,13 @@ import React from 'react';
 import GoodBye from 'react-goodbye';
 
 class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      initialvalue: props.initialValue,
+      currentValue: props.initialValue
+    };
+  }
   render() {
     return (
       <div>
@@ -53,6 +60,11 @@ class Page extends React.Component {
             )
           }
         </GoodBye>
+        <input
+          type="input"
+          value={this.state.currentValue}
+          onChange={evt => this.setState({ currentValue: evt.target.value })}
+        />
       </div>
     );
   }
@@ -81,7 +93,7 @@ ReactDom.render(
   <EnhancedRouter>
     <App />
   </EnhancedRouter>
-);*
+);
 ```
 
 ### Provider
@@ -105,7 +117,7 @@ ReactDom.render(
 
 ### GoodBye
 
-`GoodBye` is the consumer component for the GoodBye context. This component must be in the subtree of `Provider` or decorated router provider.
+`GoodBye` is the consumer component of the GoodBye context. This component must be in the subtree of `Provider` or decorated router provider.
 
 | props | type    | description                                                |
 | ----- | ------- | ---------------------------------------------------------- |
@@ -113,12 +125,12 @@ ReactDom.render(
 
 **react-goodbye** will handle all of the code logic for you. Use provided `render props` to show whatever you want (modal, lightbox, dialog, popup, etc)
 
-| render props | type     | description                                                                                                               |
-| ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------- |
-| isShow       | Boolean  | while `when` prop is true, `isShow` will be true when routing changes.                                                    |
-| handleOk     | function | allow routing changes and make `isShow` to be **false**                                                                   |
-| handleCancel | function | block routing changes and make `isShow` to be **false**                                                                   |
-| pass         | function | low-level api under `handleOk` and `handleCancel`; pass **true** will allow routing changes, and pass **false** will not. |
+| render props | type     | description                                                                                                                 |
+| ------------ | -------- | --------------------------------------------------------------------------------------------------------------------------- |
+| isShow       | Boolean  | while `when` prop is true, `isShow` will be true when routing changes.                                                      |
+| handleOk     | function | allow routing changes and make `isShow` to be **false**                                                                     |
+| handleCancel | function | block routing changes and make `isShow` to be **false**                                                                     |
+| pass         | function | low-level api under `handleOk` and `handleCancel`; pass **true** will allow routing changes, while pass **false** will not. |
 
 ## License
 
