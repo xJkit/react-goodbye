@@ -72,7 +72,7 @@ class Page extends React.Component {
 `withGoodBye` uses **higher order component** pattern to inject the **getUserConfirmation** handle function prop on the react-router provider. Use this HoC to decorate the router providers like `BrowserRouter`, `HashRouter` or low-level `Router`:
 
 ```jsx
-import { withGoodBye } from 'react-goodbye`;
+import { withGoodBye } from 'react-goodbye';
 import { Router } from 'react-router';
 
 const EnhancedRouter = withGoodBye(Router);
