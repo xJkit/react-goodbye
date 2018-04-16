@@ -6,6 +6,11 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Prompt as ReactRouterPrompt } from 'react-router';
 
+/** check library compatibility */
+import check from './checkCompatible';
+check();
+/** */
+
 const GoodByeContext = React.createContext();
 
 export class Provider extends React.Component {
