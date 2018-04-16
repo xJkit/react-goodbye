@@ -121,15 +121,15 @@ ReactDom.render(
 
 | props | type    | description                                                |
 | ----- | ------- | ---------------------------------------------------------- |
-| when  | Boolean | make render props `isShow` to be true when routing changes |
+| when  | Boolean | make render props `isShow` to be true when routing transition occurs |
 
 **react-goodbye** will handle all of the code logic for you. Use provided `render props` to show whatever you want (modal, lightbox, dialog, popup, etc)
 
 | render props | type     | description                                                                                                                 |
 | ------------ | -------- | --------------------------------------------------------------------------------------------------------------------------- |
-| isShow       | Boolean  | while `when` prop is true, `isShow` will be true when routing changes.                                                      |
-| handleOk     | function | allow routing changes and make `isShow` to be **false**                                                                     |
-| handleCancel | function | block routing changes and make `isShow` to be **false**                                                                     |
+| isShow       | Boolean  | while `when` prop is true, `isShow` will be true when routing transition occurs.                                                      |
+| handleOk     | function | allow routing transition and make `isShow` to be **false** again                                                                    |
+| handleCancel | function | block routing transition and make `isShow` to be **false** again                                                                    |
 | pass         | function | low-level api under `handleOk` and `handleCancel`; pass **true** will allow routing changes, while pass **false** will not. |
 
 ## License
