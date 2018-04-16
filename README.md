@@ -71,7 +71,7 @@ class Page extends React.Component {
 }
 ```
 
-> note: react-goodbye uses React 16.3 new context api under the hood, and therefore only React v16.3+ are supported.
+> note: react-goodbye uses React 16.3 new context api under the hood. Therefore, only React v16.3+ are supported.
 
 ## API Reference
 
