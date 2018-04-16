@@ -26,7 +26,7 @@ class Portfolio extends React.Component {
                 <p>
                   You are leaving without saving data. Do you want to continue?
                 </p>
-                <button onClick={handleOk}>Leave</button>
+                <button style={{ color: 'red' }} onClick={handleOk}>Leave</button>
                 <button onClick={handleCancel}>Stay</button>
               </Modal>
             )

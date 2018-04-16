@@ -26,7 +26,7 @@ class Settings extends React.Component {
                   You change the status without saving data. Do you want to
                   leave?
                 </p>
-                <button onClick={handleOk}>Yes</button>
+                <button style={{ color: 'red' }} onClick={handleOk}>Yes</button>
                 <button onClick={handleCancel}>No</button>
               </Modal>
             )

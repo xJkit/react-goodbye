@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Route, NavLink, Switch } from 'react-router-dom';
+import styled from 'styled-components';
+
+import Author from './components/Author';
 
 /** Pag Containers */
 import Settings from './Containers/Settings';
@@ -10,7 +13,7 @@ import './index.css';
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <Container>
         <h2>React Goodbye is a save reminder wrapper under React Router</h2>
         <ul className="nav-bar">
           <li className="nav-item">
@@ -53,7 +56,17 @@ export default class App extends Component {
             />
           </Switch>
         </div>
-      </div>
+        <Author
+          name="Jay Chung(xJkit)"
+          githubLink="https://github.com/xJkit"
+        />
+      </Container>
     );
   }
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
