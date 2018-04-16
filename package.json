@@ -17,6 +17,7 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "test": "BABEL_ENV=test jest",
+    "test:cov": "BABEL_ENV=test jest --coverage",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
@@ -64,6 +65,11 @@
     "setupTestFrameworkScriptFile": "<rootDir>/scripts/jest.setup.js",
     "testMatch": [
       "<rootDir>/__tests__/*.spec.js"
-    ]
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["html"]
   }
 }

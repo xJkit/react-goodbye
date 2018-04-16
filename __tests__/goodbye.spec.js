@@ -1,19 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import GoodBye, { Provider } from '../src';
 
-import { Provider } from '../src';
-
-describe('Provider', () => {
-  test('should render correctly', () => {
-    const wrapper = shallow(
-      <Provider>
-        {() => {}}
-      </Provider>
-    );
-    expect(wrapper).toBeTruthy();
-  });
-
-  test('should receives handleGetUserConfirm props', () => {
+describe('GoodBye Provider', () => {
+  test('should receive handleGetUserConfirm render prop', () => {
     shallow(
       <Provider>
         {(props) => {
@@ -23,17 +13,18 @@ describe('Provider', () => {
     )
   });
 
-  test('should have initial state isShow to be false', () => {
+  test('should have initial isShow to be false', () => {
     const wrapper = shallow(
       <Provider>
         {() => {}}
       </Provider>
     );
     expect(wrapper.state('isShow')).toBe(false);
-  })
+  });
 
-  test('should have isShow to be true after handleGetUserConfirm function call', () => {
+  test('should handleOk correctly', () => {
     let handleFunc;
+    const mockPass = jest.fn();
     const wrapper = shallow(
       <Provider>
         {({ handleGetUserConfirm }) => {
@@ -41,8 +32,35 @@ describe('Provider', () => {
         }}
       </Provider>
     );
-    handleFunc();
+
+    handleFunc('message', mockPass);
     wrapper.update();
     expect(wrapper.state('isShow')).toBe(true);
-  })
-})
+
+    wrapper.instance().handleOk();
+    wrapper.update();
+    expect(wrapper.state('isShow')).toBe(false);
+    expect(mockPass).toBeCalledWith(true);
+  });
+
+  test('should handleCancel correctly', () => {
+    let handleFunc;
+    const mockPass = jest.fn();
+    const wrapper = shallow(
+      <Provider>
+        {({ handleGetUserConfirm }) => {
+          handleFunc = handleGetUserConfirm;
+        }}
+      </Provider>
+    );
+
+    handleFunc('message', mockPass);
+    wrapper.update();
+    expect(wrapper.state('isShow')).toBe(true);
+
+    wrapper.instance().handleCancel();
+    wrapper.update();
+    expect(wrapper.state('isShow')).toBe(false);
+    expect(mockPass).toBeCalledWith(false);
+  });
+});
