@@ -122,6 +122,7 @@ ReactDom.render(
 | props | type    | default | description                                                          |
 |-------|---------|---------|----------------------------------------------------------------------|
 | when  | Boolean | false   | make render props `isShow` to be true when routing transition occurs |
+
 **react-goodbye** will handle all of the code logic for you. Use provided `render props` to show whatever you want (modal, lightbox, dialog, popup, etc)
 
 | render props | type     | default | description                                                                                                                 |
