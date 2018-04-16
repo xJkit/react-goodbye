@@ -4,6 +4,10 @@
 
 [![NPM](https://img.shields.io/npm/v/react-goodbye.svg)](https://www.npmjs.com/package/react-goodbye)
 
+### Please check the [demo](https://xJkit.github.io/react-goodbye) page
+
+[![NPM](https://nodei.co/npm/react-goodbye.png)](https://nodei.co/npm/@trendmicro/react-goodbye/)
+
 ## Install
 
 ```bash
