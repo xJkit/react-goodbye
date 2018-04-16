@@ -1,6 +1,13 @@
 {
   "name": "react-goodbye",
-  "version": "0.1.4",
+  "version": "0.1.6",
+  "keywords": [
+    "react",
+    "react-router",
+    "goodbye",
+    "save-reminder",
+    "render-props"
+  ],
   "description": "A save reminder component for react router",
   "author": "xJkit",
   "license": "MIT",

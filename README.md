@@ -1,6 +1,6 @@
 # react-goodbye
 
-> A save reminder component for react router.
+> A save reminder component for react router v4.
 
 [![NPM](https://img.shields.io/npm/v/react-goodbye.svg)](https://www.npmjs.com/package/react-goodbye)
 
