@@ -2761,10 +2761,6 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-final-form@^4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.5.2.tgz#f8a9518784bdc2f72e71548a42b04c640963ca49"
-
 finalhandler@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.1.1.tgz#eebf4ed840079c83f4249038c9d703008301b105"
@@ -5628,10 +5624,6 @@ react-dom@^16.3.1:
 react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
-
-react-final-form@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-3.3.1.tgz#dbe40eec853a9c451e5a8deb3b02d948a2fb7e3c"
 
 "react-goodbye@link:..":
   version "0.0.0"
