@@ -3,7 +3,7 @@ import { Prompt as RouterPrompt } from 'react-router';
 import { Prompt as RouterDomPrompt } from 'react-router-dom';
 
 /** check react version 16.3+ */
-const checkReact = () {
+const checkReact = () => {
   if (!React.createContext) {
     console.error('No React.createContext was found. Only React v16.3+ and higher versions are supported.');
   }
