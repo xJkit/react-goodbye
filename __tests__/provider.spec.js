@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import GoodBye, { Provider, withGoodBye } from '../src';
 
-describe('GoodBye Provider', () => {
+describe('<Provider />', () => {
   test('should receive handleGetUserConfirm render prop', () => {
     shallow(
       <Provider>
