@@ -14,6 +14,12 @@
 npm install --save react-goodbye
 ```
 
+or you can use **yarn**:
+
+```bash
+yarn add react-goodbye
+```
+
 ## Usage
 
 1.  Decorate your router provider from react-router using `withGoodBye`:
