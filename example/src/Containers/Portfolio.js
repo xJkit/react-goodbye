@@ -1,8 +1,5 @@
-import React, { Fragment } from 'react';
-import { Prompt } from 'react-goodbye';
-
-import Modal from '../components/Modal';
-import GoodBye from 'react-goodbye';
+import React from 'react';
+import SaveReminder from '../components/SaveReminder';
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -18,20 +15,7 @@ class Portfolio extends React.Component {
     const isValueModified = initialValue !== currentValue;
     return (
       <div>
-        <GoodBye when={isValueModified}>
-          {({ isShow, handleOk, handleCancel }) =>
-            isShow && (
-              <Modal>
-                <h3>Portfolio Changed</h3>
-                <p>
-                  You are leaving without saving data. Do you want to continue?
-                </p>
-                <button style={{ color: 'red' }} onClick={handleOk}>Leave</button>
-                <button onClick={handleCancel}>Stay</button>
-              </Modal>
-            )
-          }
-        </GoodBye>
+        <SaveReminder when={initialValue !== currentValue} />
         <h2>Portfolio Page</h2>
         <span>Your Name:</span>
         <span>

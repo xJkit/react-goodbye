@@ -14,7 +14,10 @@ export default class App extends Component {
   render() {
     return (
       <Container>
-        <h2>React Goodbye is a save reminder wrapper under React Router</h2>
+        <h1>React GoodBye</h1>
+        <h3 style={{ color: '#444' }}>
+          a save reminder component works well with React Router v4
+        </h3>
         <ul className="nav-bar">
           <li className="nav-item">
             <NavLink

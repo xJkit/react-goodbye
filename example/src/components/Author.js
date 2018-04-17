@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import GithubIcon from 'react-icons/lib/go/mark-github';
 
 const CopyRight = styled.div`
-  color: grey;
+  color: #666;
   position: fixed;
   bottom: 36px;
   right: 36px;

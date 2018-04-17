@@ -21,13 +21,30 @@ class Settings extends React.Component {
           {({ isShow, handleOk, handleCancel }) =>
             isShow && (
               <Modal>
-                <h3>Settings Changed</h3>
+                <h3>Save Reminder</h3>
                 <p>
-                  You change the status without saving data. Do you want to
+                  You changed the status without saving any data. Do you want to
                   leave?
                 </p>
-                <button style={{ color: 'red' }} onClick={handleOk}>Yes</button>
-                <button onClick={handleCancel}>No</button>
+                <div style={{ textAlign: 'right' }}>
+                  <button
+                    style={{
+                      color: 'white',
+                      backgroundColor: 'red',
+                      marginRight: '8px',
+                      padding: '8px 12px'
+                    }} onClick={handleOk}>
+                    Leave
+                  </button>
+                  <button
+                    onClick={handleCancel}
+                    style={{
+                      padding: '8px 12px'
+                    }}
+                  >
+                    Stay
+                  </button>
+                </div>
               </Modal>
             )
           }
