@@ -1,9 +1,4 @@
-/**
- * @class GoodBye
- */
-
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment, createFactory } from 'react';
 import { Prompt as ReactRouterPrompt } from 'react-router';
 
 /** check library compatibility */
@@ -57,14 +52,24 @@ export class Provider extends React.Component {
   }
 }
 
-export const withGoodBye = WrappedRouter => {
-  return props => (
+export const withGoodBye = BaseRouterComponent => {
+  const factory = createFactory(BaseRouterComponent);
+  const WithGoodBye = props => (
     <Provider>
-      {({ handleGetUserConfirm }) => (
-        <WrappedRouter {...props} getUserConfirmation={handleGetUserConfirm} />
-      )}
+      {({ handleGetUserConfirm }) => factory({
+        ...props,
+        getUserConfirmation: handleGetUserConfirm
+      })}
     </Provider>
   );
+
+  if (process.env.NODE_ENV !== 'production') {
+    const baseRouterName = BaseRouterComponent.displayName || BaseRouterComponent.name || 'Component';
+    WithGoodBye.displayName = `withGoodBye(${baseRouterName})`;
+    return WithGoodBye;
+  }
+
+  return WithGoodBye;
 };
 
 export default ({ when = false, children }) => {

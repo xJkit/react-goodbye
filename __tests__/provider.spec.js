@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import GoodBye, { Provider } from '../src';
+import GoodBye, { Provider, withGoodBye } from '../src';
 
 describe('GoodBye Provider', () => {
   test('should receive handleGetUserConfirm render prop', () => {
@@ -16,7 +16,7 @@ describe('GoodBye Provider', () => {
   test('should have initial isShow to be false', () => {
     const wrapper = shallow(
       <Provider>
-        {() => {}}
+        {() => { }}
       </Provider>
     );
     expect(wrapper.state('isShow')).toBe(false);
@@ -63,4 +63,4 @@ describe('GoodBye Provider', () => {
     expect(wrapper.state('isShow')).toBe(false);
     expect(mockPass).toBeCalledWith(false);
   });
-});
+})
