@@ -22,7 +22,7 @@ yarn add react-goodbye
 
 ## Usage
 
-1.  Decorate your router provider from react-router using `withGoodBye`:
+* Decorate your router provider from react-router using `withGoodBye`:
 
 ```jsx
 import { BrowserRouter } from 'react-router-dom';
@@ -38,7 +38,7 @@ ReactDOM.render(
 );
 ```
 
-2.  Import `GoodBye` component under the page you want with save reminder:
+* Import `GoodBye` component under the page you want with save reminder:
 
 ```jsx
 import React from 'react';
@@ -85,9 +85,9 @@ class Page extends React.Component {
 
 ## API Reference
 
-* [withGoodBye](#withGoodBye)
-* [Provider](#Provider)
-* [GoodBye](#GoodBye)
+* [withGoodBye](#withgoodbye)
+* [Provider](#provider)
+* [GoodBye](#goodbye)
 
 ### withGoodBye
 
