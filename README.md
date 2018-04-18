@@ -6,7 +6,7 @@
 
 ### Please check the [demo](https://xJkit.github.io/react-goodbye) page
 
-[![NPM](https://nodei.co/npm/react-goodbye.png)](https://nodei.co/npm/@trendmicro/react-goodbye/)
+[![NPM](https://nodei.co/npm/react-goodbye.png)](https://nodei.co/npm/react-goodbye/)
 
 ## Install
 
@@ -140,7 +140,7 @@ ReactDom.render(
 | isShow       | Boolean  | false   | while `when` prop is true, `isShow` will be true when routing transition occurs.                                            |
 | handleOk     | function |         | allow routing transition and make `isShow` to be **false** again                                                            |
 | handleCancel | function |         | block routing transition and make `isShow` to be **false** again                                                            |
-| pass         | function |         | low-level api under `handleOk` and `handleCancel`; pass **true** will allow routing changes, while pass **false** will not. |
+| pass         | function |         | low-level api under `handleOk` and `handleCancel`; pass **true** will allow routing transitions, while pass **false** will not. |
 ## License
 
 MIT © [xJkit](https://github.com/xJkit)
