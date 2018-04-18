@@ -2,13 +2,15 @@
 
 > A save reminder component for react router v4.
 
-[![NPM](https://img.shields.io/npm/v/react-goodbye.svg)](https://www.npmjs.com/package/react-goodbye)
+[![NPM](https://img.shields.io/npm/v/react-goodbye.svg)](https://www.npmjs.com/package/react-goodbye) [![CircleCI](https://circleci.com/gh/xJkit/react-goodbye/tree/master.svg?style=shield)](https://circleci.com/gh/xJkit/react-goodbye/tree/master) [![Coverage Status](https://coveralls.io/repos/github/xJkit/react-goodbye/badge.svg?branch=master)](https://coveralls.io/github/xJkit/react-goodbye?branch=master)
 
-### Please check the [demo](https://xJkit.github.io/react-goodbye) page
+react-goodbye is a save reminder utility to prevent routing transition before you leave without saving changes.
 
-[![NPM](https://nodei.co/npm/react-goodbye.png)](https://nodei.co/npm/react-goodbye/)
+Please check the [demo](https://xJkit.github.io/react-goodbye) page for more information.
 
 ## Install
+
+[![NPM](https://nodei.co/npm/react-goodbye.png)](https://nodei.co/npm/react-goodbye/)
 
 ```bash
 npm install --save react-goodbye
