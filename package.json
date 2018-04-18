@@ -18,6 +18,7 @@
   "scripts": {
     "test": "BABEL_ENV=test jest",
     "test:cov": "BABEL_ENV=test jest --coverage",
+    "coverage": "BABEL_ENV=test jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
@@ -37,6 +38,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "coveralls": "^3.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-standard": "^11.0.0",
@@ -70,6 +72,9 @@
       "src/**/*.{js,jsx}"
     ],
     "coverageDirectory": "coverage",
-    "coverageReporters": ["html"]
+    "coverageReporters": [
+      "html",
+      "lcov"
+    ]
   }
 }

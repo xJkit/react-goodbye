@@ -25,7 +25,7 @@ jobs:
 
       - run:
           name: Test Packages
-          command: yarn run test
+          command: yarn run coverage
 
       - save_cache:
           name: Save node_modules cache
