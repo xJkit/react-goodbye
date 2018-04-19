@@ -1,11 +1,6 @@
 import React, { Fragment, createFactory } from 'react';
 import { Prompt as ReactRouterPrompt } from 'react-router';
 
-/** check library compatibility */
-import check from './checkCompatible';
-check();
-/** */
-
 const GoodByeContext = React.createContext();
 
 export class Provider extends React.Component {
@@ -56,15 +51,20 @@ export const withGoodBye = BaseRouterComponent => {
   const factory = createFactory(BaseRouterComponent);
   const WithGoodBye = props => (
     <Provider>
-      {({ handleGetUserConfirm }) => factory({
-        ...props,
-        getUserConfirmation: handleGetUserConfirm
-      })}
+      {({ handleGetUserConfirm }) =>
+        factory({
+          ...props,
+          getUserConfirmation: handleGetUserConfirm
+        })
+      }
     </Provider>
   );
 
   if (process.env.NODE_ENV !== 'production') {
-    const baseRouterName = BaseRouterComponent.displayName || BaseRouterComponent.name || 'Component';
+    const baseRouterName =
+      BaseRouterComponent.displayName ||
+      BaseRouterComponent.name ||
+      'Component';
     WithGoodBye.displayName = `withGoodBye(${baseRouterName})`;
     return WithGoodBye;
   }
