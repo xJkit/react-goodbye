@@ -1,6 +1,7 @@
 import React, { Fragment, createFactory } from 'react';
 import { Prompt as ReactRouterPrompt } from 'react-router';
 
+const __DEV__ = process.env.NODE_ENV !== 'production';
 const GoodByeContext = React.createContext();
 
 export class Provider extends React.Component {
@@ -10,6 +11,10 @@ export class Provider extends React.Component {
       isShow: false
     };
     this.pass = undefined;
+    invariant(
+      React.createContext,
+      'react-goodbye only support React 16.3+ context api, please upgrade your react to the latest version.'
+    )
   }
 
   handleGetUserConfirm = (message, pass) => {
@@ -60,7 +65,7 @@ export const withGoodBye = BaseRouterComponent => {
     </Provider>
   );
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (__DEV__) {
     const baseRouterName =
       BaseRouterComponent.displayName ||
       BaseRouterComponent.name ||
