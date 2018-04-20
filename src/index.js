@@ -1,4 +1,5 @@
 import React, { Fragment, createFactory } from 'react';
+import PropTypes from 'prop-types';
 import { Prompt as ReactRouterPrompt } from 'react-router';
 import invariant from 'invariant';
 
@@ -76,13 +77,48 @@ export const withGoodBye = BaseRouterComponent => {
   return WithGoodBye;
 };
 
-export default ({ when = false, children }) => {
-  return (
-    <Fragment>
-      <ReactRouterPrompt when={when} message="" />
-      <GoodByeContext.Consumer>
-        {renderProps => children({ ...renderProps })}
-      </GoodByeContext.Consumer>
-    </Fragment>
-  );
+class GoodBye extends React.Component {
+  handleBeforeUnload = evt => {
+    const { alertMessage } = this.props;
+    evt.returnValue = alertMessage;
+    return alertMessage;
+  };
+
+  componentDidUpdate() {
+    const { when, alertBeforeUnload } = this.props;
+    window.onbeforeunload = when && alertBeforeUnload
+      ? this.handleBeforeUnload
+      : null;
+  }
+
+  componentWillUnmount() {
+    window.onbeforeunload = null;
+  }
+
+  render() {
+    const { when, children } = this.props;
+    return (
+      <Fragment>
+        <ReactRouterPrompt when={when} message="" />
+        <GoodByeContext.Consumer>
+          {renderProps => children({ ...renderProps })}
+        </GoodByeContext.Consumer>
+      </Fragment>
+    );
+  }
+}
+
+GoodBye.propTypes = {
+  when: PropTypes.bool,
+  alertBeforeUnload: PropTypes.bool,
+  alertMessage: PropTypes.string,
+  children: PropTypes.func.isRequired,
 };
+
+GoodBye.defaultProps = {
+  when: false,
+  alertBeforeUnload: false,
+  alertMessage: '' // only work for IE
+};
+
+export default GoodBye;
