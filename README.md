@@ -1,38 +1,32 @@
-<h1 align="center">
-  React GoodBye
-</h1>
+# React GoodBye
+> A save reminder component for react router v4.
 
-<p align="center">
-  A save reminder component for react router v4.
-</p>
-
-<p align="center">
+<p>
   <a href="https://www.npmjs.com/package/react-goodbye">
     <img
       alt="npm version"
       src="https://img.shields.io/npm/v/react-goodbye.svg"
-    >
+    />
   </a>
   <a href="https://circleci.com/gh/xJkit/react-goodbye/tree/master">
     <img
       alt="circle ci"
       src="https://circleci.com/gh/xJkit/react-goodbye/tree/master.svg?style=shield"
-    >
+    />
   </a>
   <a href="https://coveralls.io/github/xJkit/react-goodbye?branch=master">
     <img
       alt="coverage"
       src="https://coveralls.io/repos/github/xJkit/react-goodbye/badge.svg?branch=master"
-    >
+    />
   </a>
   <a href="https://github.com/xJkit/react-goodbye/blob/master/LICENSE">
     <img
       alt="license mit"
       src="https://img.shields.io/badge/License-MIT-blue.svg"
-    >
+    />
   </a>
 </p>
-
 
 react-goodbye is a save reminder utility to prevent routing transition before you leave without saving changes.
 
