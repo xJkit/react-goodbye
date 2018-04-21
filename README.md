@@ -131,18 +131,21 @@ ReactDom.render(
 
 `GoodBye` is the consumer component of the GoodBye context. This component must be in the subtree of `Provider` or decorated router provider.
 
-| props | type    | default | description                                                          |
-|-------|---------|---------|----------------------------------------------------------------------|
-| when  | Boolean | false   | make render props `isShow` to be true when routing transition occurs |
+| props             | type    | default | description                                                                                                                                                                                                                     |
+|-------------------|---------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| when              | Boolean | false   | Make render props `isShow` to be true or false when routing transition occurs.                                                                                                                                                  |
+| alertBeforeUnload | Boolean | false   | Turn on the browser alert. Technically, when you **refresh** or **close** browser window, only browser itself can detect and popup alert for you. If you want to remind the user when doing actions above, turn on this option. |
+| alertMessage      | String  | ''      | Custom browser alert messages. Note that this option only works for **IE**.                                                                                                                                                     |
 
 **react-goodbye** will handle all of the code logic for you. Use provided `render props` to show whatever you want (modal, lightbox, dialog, popup, etc)
 
-| render props | type     | default | description                                                                                                                 |
-|--------------|----------|---------|-----------------------------------------------------------------------------------------------------------------------------|
-| isShow       | Boolean  | false   | while `when` prop is true, `isShow` will be true when routing transition occurs.                                            |
-| handleOk     | function |         | allow routing transition and make `isShow` to be **false** again                                                            |
-| handleCancel | function |         | block routing transition and make `isShow` to be **false** again                                                            |
-| pass         | function |         | low-level api under `handleOk` and `handleCancel`; pass **true** will allow routing transitions, while pass **false** will not. |
+| render props | type     | default | description                                                                                                                     |
+|--------------|----------|---------|---------------------------------------------------------------------------------------------------------------------------------|
+| isShow       | Boolean  | false   | While `when` prop is true, `isShow` will be true when routing transition occurs. You can put your dialog component here.        |
+| handleOk     | function |         | Allow routing transition and make `isShow` to be **false** again.                                                               |
+| handleCancel | function |         | Block routing transition and make `isShow` to be **false** again.                                                               |
+| pass         | function |         | Low-level api under `handleOk` and `handleCancel`; pass **true** will allow routing transitions, while pass **false** will not. |
+
 ## License
 
 MIT © [xJkit](https://github.com/xJkit)
