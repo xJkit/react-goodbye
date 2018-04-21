@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import GoodBye, { Provider, withGoodBye } from '../src';
+import { Provider } from '../src';
 
 describe('<Provider />', () => {
   test('should receive handleGetUserConfirm render prop', () => {

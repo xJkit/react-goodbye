@@ -17,7 +17,11 @@ class Settings extends React.Component {
     const isModified = initialValue !== currentValue;
     return (
       <div>
-        <GoodBye when={isModified}>
+        <GoodBye
+          when={isModified}
+          alertBeforeUnload
+          alertMessage="Save before leave. Do you want to continue?" // only work for IE
+        >
           {({ isShow, handleOk, handleCancel }) =>
             isShow && (
               <Modal>
@@ -50,7 +54,12 @@ class Settings extends React.Component {
           }
         </GoodBye>
         <h2>Settings Page</h2>
-        <div style={{ color: isModified ? 'red' : 'black' }}>
+        <div
+          style={{
+            color: isModified ? 'red' : 'black',
+            marginBottom: 24
+          }}
+        >
           <span>Portfolio Status: </span>
           <select
             value={currentValue}
@@ -59,6 +68,13 @@ class Settings extends React.Component {
             <option value="public">Public</option>
             <option value="private">Private</option>
           </select>
+        </div>
+        <div style={{ color: 'grey' }}>
+          <p>change status and do the following:</p>
+          <ul className="note">
+            <li>change route will popup custom dialogue</li>
+            <li>reload or close window will trigger browser alert </li>
+          </ul>
         </div>
       </div>
     );
