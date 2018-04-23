@@ -1,4 +1,6 @@
 import React from 'react';
+
+/** Use Your Own Custom Save Reminder Component */
 import SaveReminder from '../components/SaveReminder';
 
 class Portfolio extends React.Component {
@@ -15,7 +17,11 @@ class Portfolio extends React.Component {
     const isValueModified = initialValue !== currentValue;
     return (
       <div>
-        <SaveReminder when={initialValue !== currentValue} />
+        <SaveReminder
+          when={initialValue !== currentValue}
+          alertBeforeUnload
+          alertMessage="No! No! No! Save before leave! Do you want to leave? Q.Q" // only work for IE
+        />
         <h2>Portfolio Page</h2>
         <span>Your Name:</span>
         <span>

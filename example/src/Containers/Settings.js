@@ -20,7 +20,7 @@ class Settings extends React.Component {
         <GoodBye
           when={isModified}
           alertBeforeUnload
-          alertMessage="Save before leave. Do you want to continue?" // only work for IE
+          alertMessage="No! No! No! Save before leave! Do you want to leave? Q.Q" // only work for IE
         >
           {({ isShow, handleOk, handleCancel }) =>
             isShow && (

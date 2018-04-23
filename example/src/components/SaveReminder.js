@@ -9,8 +9,8 @@ import '@trendmicro/react-modal/dist/react-modal.css';
 /** */
 
 /** Custom Common Save Reminder Modal */
-export default ({ when }) => (
-  <GoodBye when={when}>
+export default (props) => (
+  <GoodBye {...props}>
     {({ isShow, handleCancel, handleOk }) => isShow && (
         <Modal
           show
