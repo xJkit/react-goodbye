@@ -70,11 +70,13 @@ ReactDOM.render(
 import React from 'react';
 import GoodBye from 'react-goodbye';
 
+import Modal from './path/to/your/modal/component';
+
 class Page extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      initialvalue: props.initialValue,
+      initialValue: props.initialValue,
       currentValue: props.initialValue
     };
   }
