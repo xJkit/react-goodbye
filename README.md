@@ -170,7 +170,7 @@ ReactDom.render(
 | isShow       | Boolean  | false   | While `when` prop is true, `isShow` will be true when routing transition occurs. You can put your dialog component here.        |
 | handleOk     | function |         | Allow routing transition and make `isShow` to be **false** again.                                                               |
 | handleCancel | function |         | Block routing transition and make `isShow` to be **false** again.                                                               |
-| pass         | function |         | Low-level api under `handleOk` and `handleCancel`; pass **true** will allow routing transitions, while pass **false** will not. |
+| handlePass         | function |         | Low-level api under `handleOk` and `handleCancel`; pass **true** or **false** will allow/block routing transitions. Use this function to do your additional actions. |
 
 ## License
 
