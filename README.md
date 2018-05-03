@@ -30,7 +30,7 @@
 
 react-goodbye is a save reminder utility to prevent routing transition before you leave without saving changes.
 
-Please check the [demo](https://xJkit.github.io/react-goodbye) page for more information.
+**Please check the [demo](https://xJkit.github.io/react-goodbye) page for more information.**
 
 ## Install
 
