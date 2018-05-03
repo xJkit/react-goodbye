@@ -8,9 +8,13 @@ class Provider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isShow: false
+      isShow: false,
+      handleOk: this.handleOk,
+      handleCancel: this.handleCancel,
+      handlePass: this.handlePass
     };
     this.pass = undefined;
+
     invariant(
       React.createContext,
       'react-goodbye only support React 16.3+ context api, please upgrade your react to the latest version.'
@@ -19,9 +23,7 @@ class Provider extends React.Component {
 
   handleGetUserConfirm = (message, pass) => {
     this.pass = pass;
-    this.setState({
-      isShow: true
-    });
+    this.setState({ isShow: true });
   };
 
   handleOk = () => {
@@ -34,19 +36,16 @@ class Provider extends React.Component {
     this.setState({ isShow: false });
   };
 
+  handlePass = bool => {
+    this.pass(bool);
+    this.setState({ isShow: false });
+  }
+
   render() {
+    const { children } = this.props;
     return (
-      <GoodByeContext.Provider
-        value={{
-          isShow: this.state.isShow,
-          handleOk: this.handleOk,
-          handleCancel: this.handleCancel,
-          pass: this.pass
-        }}
-      >
-        {this.props.children({
-          handleGetUserConfirm: this.handleGetUserConfirm
-        })}
+      <GoodByeContext.Provider value={this.state}>
+        {children({ handleGetUserConfirm: this.handleGetUserConfirm })}
       </GoodByeContext.Provider>
     );
   }

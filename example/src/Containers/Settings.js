@@ -3,6 +3,14 @@ import React from 'react';
 import Modal from '../components/Modal';
 import GoodBye from 'react-goodbye';
 
+const styles = {
+  btnStyle: {
+    color: 'white',
+    marginRight: '8px',
+    padding: '8px 12px'
+  }
+}
+
 class Settings extends React.Component {
   constructor(props) {
     super(props);
@@ -32,18 +40,19 @@ class Settings extends React.Component {
                 </p>
                 <div style={{ textAlign: 'right' }}>
                   <button
+                    onClick={handleOk}
                     style={{
-                      color: 'white',
-                      backgroundColor: 'red',
-                      marginRight: '8px',
-                      padding: '8px 12px'
-                    }} onClick={handleOk}>
+                      ...styles.btnStyle,
+                      backgroundColor: 'red'
+                    }}
+                  >
                     Leave
                   </button>
                   <button
                     onClick={handleCancel}
                     style={{
-                      padding: '8px 12px'
+                      ...styles.btnStyle,
+                      color: 'black'
                     }}
                   >
                     Stay
