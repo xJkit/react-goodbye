@@ -46,6 +46,8 @@ or you can use **yarn**:
 yarn add react-goodbye
 ```
 
+> note: react-goodbye uses React 16.3 new context api under the hood. Therefore, only React v16.3+ are supported.
+
 ## Usage
 
 * Decorate your router provider from react-router using `withGoodBye`:
@@ -109,7 +111,6 @@ class Page extends React.Component {
 }
 ```
 
-> note: react-goodbye uses React 16.3 new context api under the hood. Therefore, only React v16.3+ are supported.
 
 ## API Reference
 
