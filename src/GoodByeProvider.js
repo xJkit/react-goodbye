@@ -27,19 +27,19 @@ class Provider extends React.Component {
   };
 
   handleOk = () => {
-    this.setState({ isShow: false });
     this.pass(true);
+    this.setState({ isShow: false });
   };
 
   handleCancel = () => {
-    this.setState({ isShow: false });
     this.pass(false);
+    this.setState({ isShow: false });
   };
 
   handlePass = bool => {
-    this.setState({ isShow: false });
     this.pass(bool);
-  };
+    this.setState({ isShow: false });
+  }
 
   render() {
     const { children } = this.props;
