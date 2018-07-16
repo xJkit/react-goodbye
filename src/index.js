@@ -27,10 +27,19 @@ class GoodBye extends React.Component {
   }
 
   render() {
-    const { when, children } = this.props;
+    const { when, children, conditionalPrompt } = this.props;
     return (
       <Fragment>
-        <ReactRouterPrompt when={when} message="" />
+        <ReactRouterPrompt
+          when={when}
+          message={location => {
+            if (typeof conditionalPrompt === 'undefined' || conditionalPrompt(location) !== true) {
+              return '';
+            }
+
+            return true;
+          }}
+        />
         <GoodByeContext.Consumer>
           {renderProps => children({ ...renderProps })}
         </GoodByeContext.Consumer>
@@ -41,6 +50,7 @@ class GoodBye extends React.Component {
 
 GoodBye.propTypes = {
   when: PropTypes.bool,
+  conditionalPrompt: PropTypes.func,
   alertBeforeUnload: PropTypes.bool,
   alertMessage: PropTypes.string,
   children: PropTypes.func.isRequired,
