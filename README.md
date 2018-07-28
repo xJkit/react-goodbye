@@ -163,6 +163,8 @@ ReactDom.render(
 | when              | Boolean | false   | Make render props `isShow` to be true or false when routing transition occurs.                                                                                                                                                  |
 | alertBeforeUnload | Boolean | false   | Turn on the browser alert. Technically, when you **refresh** or **close** browser window, only browser itself can detect and popup alert for you. If you want to remind the user when doing actions above, turn on this option. |
 | alertMessage      | String  | ''      | Custom browser alert messages. Note that this option only works for **IE**.                                                                                                                                                     |
+| conditionalPrompt | func    |         | Custom callback to show the prompt conditionally based on the location. The function receives the location and you can return true to allow the transition or false to show the prompt.                                         |
+
 
 **react-goodbye** will handle all of the code logic for you. Use provided `render props` to show whatever you want (modal, lightbox, dialog, popup, etc)
 
