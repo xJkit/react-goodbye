@@ -6,7 +6,7 @@ import GoodByeContext from './GoodByeContext';
 
 export Provider from './GoodByeProvider';
 export withGoodBye from './withGoodBye';
-export useGoodBye from './useGoodBye';
+export useGoodBye from './useGoodbye';
 
 const __DEV__ = process.env.NODE_ENV !== 'production';
 
