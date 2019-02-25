@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { Prompt as ReactRouterPrompt } from 'react-router';
 
 import GoodByeContext from './GoodByeContext';
-import Provider from './GoodByeProvider';
-import withGoodBye from './withGoodBye';
+
+export Provider from './GoodByeProvider';
+export withGoodBye from './withGoodBye';
+export useGoodBye from './useGoodBye';
 
 const __DEV__ = process.env.NODE_ENV !== 'production';
 
@@ -60,11 +62,6 @@ GoodBye.defaultProps = {
   when: false,
   alertBeforeUnload: false,
   alertMessage: '' // only work for IE
-};
-
-export {
-  Provider,
-  withGoodBye,
 };
 
 export default GoodBye;
